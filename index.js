@@ -6,8 +6,10 @@ var startPage = "index.html";
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("./public"));
-const { register } = require('./utils/UserUtils')
+const { register, login } = require('./utils/UserUtils')
 app.post('/register', register);
+app.post('/login', login);
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/public/" + startPage);
 })

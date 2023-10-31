@@ -10,8 +10,9 @@ const { register, login } = require('./utils/UserUtil')
 app.post('/register', register);
 app.post('/login', login);
 
-const { viewResources } = require('./utils/ResourceUtil')
+const { viewResources ,addResources} = require('./utils/ResourceUtil')
 app.get('/view-resources', viewResources);
+app.post('/add-resource', addResource);
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/public/" + startPage);
